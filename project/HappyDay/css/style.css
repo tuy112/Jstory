@@ -1,0 +1,129 @@
+
+/* Web Font Load */
+@import url('https://fonts.googleapis.com/css2?family=Jua&display=swap');
+
+/* Type Selector Reset */
+body {
+	font-weight: 400;
+	font-family: 'jua', sans-serif;
+	font-size: 1em;
+	line-height: 1.25;
+	-webkit-text-size-adjust: 100%;
+	-webkit-font-smoothing: antialiased;
+	cursor: default;
+}
+html, body {
+	width: 100%;
+	height: 100%;
+	margin: 0;
+	padding: 0;
+	font-size: 100%;
+}
+div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, code, form, fieldset, legend, input, textarea, p, blockquote, th, td, figure {
+	margin: 0;
+	padding: 0;
+}
+header, footer, section, article, aside, nav, hgroup, details, menu, figure, figcaption {
+	display: block;
+}
+button, input[type=submit], input[type=reset], input[type=button] {
+	overflow: visible;
+	cursor: pointer;
+}
+input[type=text], input[type=email], input[type=password], input[type=submit], textarea {
+	-webkit-appearance: none;
+}
+input, select, textarea, button {
+	font-family: 'jua', sans-serif;
+	font-size: 100%;
+	border-radius: 0;
+}
+ul li {
+	list-style: none;
+}
+img, fieldset {
+	border: none;
+	vertical-align: top;
+}
+hr {
+	display: none;
+}
+
+
+/* start css */
+#wrap {
+	position: relative;
+    background-image: url(../images/bg1.png);
+	background-repeat: no-repeat;
+	background-size: cover;
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+	max-width: 497px;
+}
+.constelacao {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  animation: rotate 600s infinite linear;
+}
+@keyframes rotate {
+  0% {
+    -webkit-transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+  }
+}
+
+.day { position: absolute; top: 10%; left: 20%;}
+.day .top { 
+	font-size: 40px;
+	font-weight: 900;
+	color: #776a77;
+}
+.day .top span {
+	position: relative;
+	animation: ani_text 1.5s infinite;
+}
+.day .top span:nth-child(1) { animation-delay: 0.1s;}
+.day .top span:nth-child(2) { animation-delay: 0.2s;}
+.day .top span:nth-child(3) { animation-delay: 0.3s;}
+.day .top span.today {}
+.day .notice {
+	font-size: 10px;
+	font-style: italic;
+	margin-top: 8px;
+}
+
+.main {
+	position: absolute; top: 50%; left: 50%;
+}
+.main .content {
+	font-size: 21px;
+	font-weight: 500;
+	line-height: 2.1;
+	color: #776A77;
+}
+.main button {
+	margin-top: 16px;
+	cursor: pointer;
+	border-radius: 7px;
+	padding: 7px;
+	background: #fff;
+	color: #776a77;
+	border: 1px solid #776a77;
+	transition: 0.3s;
+}
+.main button:hover {
+	background-color: #776a77;
+	color: #DDDEA5;
+}
+
+@keyframes ani_text { 0% { top: 0; } 20% { top: -0.2rem; } 40% { top: 0 } 60% { top: 0 } 80% { top: 0 } 100% { top: 0 } }
+
+
+/* Media Screen - Mobie */
+@media screen and (max-width:767px) {}

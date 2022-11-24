@@ -1,13 +1,24 @@
-* {
-	margin:0;
-    padding:0;
-    border:0;
-    outline:0;
-    font-size:100%;
-    vertical-align:baseline;
-    background:transparent;
-    cursor: default;
-    font-weight: 500;
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700&display=swap');
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
 }
 /* HTML5 display-role reset for older browsers */
 article, aside, details, figcaption, figure, 
@@ -15,10 +26,21 @@ footer, header, hgroup, menu, nav, section {
 	display: block;
 }
 body {
+	overflow-x: hidden;
+	margin: 0;
+	position: relative;
 	line-height: 1.6;
-    
+    font-size: 16px;    
+    font-family: 'Jua', sans-serif;
 }
-ol, ul {
+a {
+	line-height: 1.6;
+    font-size:16px;    
+    text-decoration: none;
+    color:#333;
+}
+
+ol, ul , li {
 	list-style: none;
 }
 blockquote, q {
@@ -33,10 +55,187 @@ table {
 	border-collapse: collapse;
 	border-spacing: 0;
 }
-a {
-    transition: 0.1s;
-    color: #333;
-    text-decoration: none; 
-    outline: none;
-    cursor: pointer;
+
+.hide {
+	position: absolute;
+	left: 0; top: 0;
+	width: 0; height: 0;
+	text-indent: -9999em;
+	overflow: hidden;
+	visibility: hidden;
+	line-height: 0;
 }
+
+
+/* ========================================================= */
+
+
+/* 페이지의 공통부분 */
+/* layout  */
+#wrap {
+    max-width: 1536px;
+    position: relative;
+    margin: 0 auto;
+    padding: 8px;
+    padding-top: 85px;
+    scroll-snap-type: y mandatory;
+    overflow: auto;
+}
+#wrap #mainVisual, #wrap .main {
+    scroll-snap-align: center;
+    display: inline-block;
+    width: 100%;
+    height: 100vh;
+    padding: 100px;
+    font-size: 70px;
+    text-align: center;
+    box-sizing: border-box;
+    color: #fff;
+}
+
+/* header */
+#header { 
+    position: fixed; top: 0; left: 0;
+    width: 100%; height: 85px;
+    background: #222;
+}
+#header .inner {}
+#header h1 { 
+    text-align: right; 
+    margin-right: 12px; margin-top:7px; 
+}
+#header h1 a {
+    font-weight: 600;
+    color: #fff;
+}
+
+/* header - hamburger */
+#header input[id=trigger] {
+    display: none;
+}
+#header label[for=trigger] {
+    width: 30px;
+    height: 20px;
+    display: block;
+    position: relative;
+    cursor: pointer;
+    margin-left: 8px;
+}
+#header label[for=trigger]>span {
+    display: block;
+    height: 4px;
+    background-color: #fff;
+    left: 0;
+    width: 100%;
+    position: absolute;
+    transition: 0.4s;
+    z-index: 9999;
+}
+#header label[for=trigger]>span:nth-child(1) { top: 0;}
+#header label[for=trigger]>span:nth-child(2) { top: 50%;}
+#header label[for=trigger]>span:nth-child(3) { top: 100%;}
+
+#header input[id=trigger]:checked + label span:nth-child(1){
+    top: 50%;
+    transform: rotate(45deg);
+}
+#header input[id=trigger]:checked + label span:nth-child(2){
+    opacity: 0;
+}
+#header input[id=trigger]:checked + label span:nth-child(3){
+    top: 50%;
+    transform: rotate(-45deg);
+}
+#header input[id=trigger]:checked~.sideMenu { left: 0;}
+
+#header .sideMenu {
+    width: 250px; height: 100vh;
+    background-color: #cdcdcd;
+    position: fixed;
+    top: 0;
+    left: 0;
+    left: -250px;
+    transition: 0.3s;
+}
+#header input[id=trigger]:checked+label[for=trigger] {
+    left: 185px;
+    transition: 0.3s;
+}
+
+#header .sideMenu .gnb {}
+#header .sideMenu .gnb li { text-align: center;}
+#header .sideMenu .gnb li:first-child { margin-top: 70px;}
+#header .sideMenu .gnb li a {
+    font-weight: 600;
+    line-height: 3.3;
+    font-size: 19px;
+}
+#header .sideMenu .gnb li a:hover {
+    border-bottom: 2px solid #333;
+}
+#header .logMenu {
+    text-align: center;
+}
+#header .logMenu li {
+    float: left;
+    margin-left: 13px;
+    margin-top: 40px;
+}
+#header .logMenu li:first-child {
+    margin-left: 65px;
+}
+#header .logMenu li a {
+    font-size: 14px;
+}
+#header .logMenu li a :hover {
+
+}
+
+
+/* main */
+#container { height: 100%;}
+#container::after { content: ""; display: block; clear: both;}
+#content {}
+
+/* footer */
+#footer { 
+    position: relative;
+    background: #333;
+}
+/* visit Counting */
+.box_visit{
+	color: #555;
+	font-size: 10px;
+	position: absolute; bottom: 16px; right:75px;
+	cursor: default;
+}
+.box_visit:after {
+	content: '';
+	display: block;
+	clear: both
+}
+.box_visit .data_today {
+	float: left;
+	padding-right: 11px;
+	padding-top: 5px;
+	background: url(images/ico_dot.gif) no-repeat center right;
+}
+.box_visit .data_yesterday {
+	float: left;
+	padding-left: 7px;
+	padding-top: 5px;
+}
+.box_visit .data_total {
+	clear: both;
+	padding-top: 1px;
+	font-weight: 600;
+}
+.box_visit .title_visit {
+	float: left;
+	padding-right: 4px;
+}
+.box_visit .item_visit {
+	float: left;
+}
+
+

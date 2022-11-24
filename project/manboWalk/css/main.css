@@ -1,0 +1,30 @@
+/* mainVisual */
+#mainVisual {
+    margin-top: 35px;
+    height: 820px;
+    display: grid;
+    
+}
+#mainVisual h1 { 
+    font-size: 20px;
+    font-weight: 500;
+}
+#mainVisual {
+    z-index: -1;
+    height: 3000px;
+}
+#mainVisual h1 {
+    font-weight: 600;
+}
+
+
+/* main */
+.main .work {}
+.main .w1 {}
+.main .w1 .inner {}
+.main .w1 h3 { 
+    text-align: center;
+}
+.main .w1 p { 
+    text-align: center;
+}
