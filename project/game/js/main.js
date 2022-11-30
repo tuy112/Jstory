@@ -6,11 +6,12 @@ canvas.width = window.innerWidth - 100;
 canvas.height = window.innerHeight - 100;
 
 
-
+/*
 var img1 = new Image();
-img1.src = '../images/knife.png';
-var img2 = new Image();
 img1.src = '../images/walking.png';
+var img2 = new Image();
+img2.src = '../images/knife.png';
+*/
 
 // 캐릭터 생성
 var human = {
@@ -21,7 +22,7 @@ var human = {
     draw() {
         ctx.fillStyle = "green";
         ctx.fillRect(this.x,this.y,this.width,this.height);
-        // ctx.drawImage(img2,this.x,this.y);
+        // ctx.drawImage(img1,this.x,this.y);
     }
 }
 // human.draw();
@@ -38,8 +39,7 @@ class Hurdle {
     draw() {
         ctx.fillStyle = "aqua";
         ctx.fillRect(this.x,this.y,this.width,this.height);
-        // ctx.drawImage(img1,this.x,this.y);
-        3
+        // ctx.drawImage(img2,this.x,this.y);
     }
 }
 var hurdle = new Hurdle();

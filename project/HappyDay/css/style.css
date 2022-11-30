@@ -93,7 +93,7 @@ hr {
 .day .top span:nth-child(3) { animation-delay: 0.3s;}
 .day .top span.today {}
 .day .notice {
-	font-size: 10px;
+	font-size: 12px;
 	font-style: italic;
 	margin-top: 8px;
 }
