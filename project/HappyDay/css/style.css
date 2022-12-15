@@ -53,7 +53,7 @@ hr {
 /* start css */
 #wrap {
 	position: relative;
-    background-image: url(../images/bg1.png);
+    background-image: url(../images/bg4.jpg);
 	background-repeat: no-repeat;
 	background-size: cover;
 	width: 100%;
@@ -82,7 +82,7 @@ hr {
 .day .top { 
 	font-size: 40px;
 	font-weight: 900;
-	color: #776a77;
+	color: #94B9F3;
 }
 .day .top span {
 	position: relative;
@@ -105,7 +105,7 @@ hr {
 	font-size: 21px;
 	font-weight: 500;
 	line-height: 2.1;
-	color: #776A77;
+	color: #FBB9AB;
 }
 .main button {
 	margin-top: 16px;

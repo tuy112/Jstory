@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .hide {
+            position: absolute;
+	        left: 0; top: 0;
+	        width: 0; height: 0;
+	        text-indent: -9999em;
+	        overflow: hidden;
+	        visibility: hidden;
+	        line-height: 0;
+        }
+
+        /* wrap */
+        #wrap {
+            position: relative;
+        }
+
+        #footer {
+            position: absolute;
+            bottom: 0;
+        }
+    </style>
+</head>
+<body>
+    <!-- 본문 바로가기 -->
+    <p class="hide" id="skipNav"><a href="./index.html">본문바로가기</a></p>
+
+    <!-- start -->
+    <div id="wrap">
+        
+        <!-- header -->
+        <header id="header">
+            <h1>logo</h1>
+            <nav>
+                <ul>
+                    <li>Home</li>
+                    <li>소개</li>
+                    <li>History</li>
+                    <li>SNS</li>
+                </ul>
+            </nav>
+        </header>
+
+        <!-- visual -->
+        <section id="visual"></section>
+
+        <!-- main -->
+        <main id="container" class="main">
+            <section id="content">
+                <!-- content 1 -->
+                <div class="work w1">
+                    <div class="inner"></div>
+                </div>
+                <!-- content 2 -->
+                <div class="work w2">
+                    <div class="inner"></div>
+                </div>
+                <!-- content 3 -->
+                <div class="work w3">
+                    <div class="inner"></div>
+                </div>
+            </section>
+        </main>
+
+        <!-- footer -->
+        <footer id="footer">
+            <p>대표자명 : 서지현/김휘래</p>
+            <p>|</p>
+            <p>기업주소 : 서울 구로구 디지털로32가길 18, 608호</p> 
+        </footer>
+
+    </div>
+
+    <!-- sidebar?? -->
+    <ul id="quick">
+        <li><a href="#">Home</a></li>
+        <li><a href="#">소개</a></li>
+        <li><a href="#">History</a></li>
+        <li><a href="#">SNS</a></li>
+    </ul>
+</body>
+</html>

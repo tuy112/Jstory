@@ -7,7 +7,7 @@ function getTodayLabel() {
 
   return todayLabel;
 }
-console.log(getTodayLabel());e
+console.log(getTodayLabel());
 
 // 콘솔 값 html 출력
 document.getElementById('now').innerHTML = getTodayLabel();
@@ -15,6 +15,6 @@ document.getElementById('now').innerHTML = getTodayLabel();
   
 // 장미 수령하기 버튼 onclick 이벤트
 function rosy() { 
-  location.href = "https://jh-healing-place.tistory.com/27";
+  location.href = "https://jh-healing-place.tistory.com/40";
 }
 

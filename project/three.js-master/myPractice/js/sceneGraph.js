@@ -1,14 +1,12 @@
 import * as THREE from '../../build/three.module.js';
+import { OrbitControls } from '../../examples/jsm/controls/OrbitControls.js';
 
 class App {
     constructor() {
         const divContainer = document.querySelector("#webgl-container");
         this._divContainer = divContainer;
 
-        const renderer = new THREE.WebGLRenderer({ 
-            alpha: true,
-            antialias: true
-         });
+        const renderer = new THREE.WebGLRenderer({ antialias: true });
         renderer.setPixelRatio(window.devicePixelRatio);
         divContainer.appendChild(renderer.domElement);
         this._renderer = renderer;
@@ -19,11 +17,17 @@ class App {
         this._setupCamera();
         this._setupLight();
         this._setupModel();
+        this._setupControls();
 
         window.onresize = this.resize.bind(this);
         this.resize();
 
         requestAnimationFrame(this.render.bind(this));
+    }
+
+    // _setupControls
+    _setupControls() {
+        new OrbitControls(this._camera, this._divContainer);
     }
 
 
@@ -52,13 +56,20 @@ class App {
 
     // _setupModel
     _setupModel() {
-        const geometry = new THREE.BoxGeometry(1, 1, 1);
-        const material = new THREE.MeshPhongMaterial({color: 0x44a88});
+        const geometry = new THREE.SphereGeometry(0.9, 32, 32);
+        const fillMaterial = new THREE.MeshPhongMaterial({ color: 0x515151});
+        const cube = new THREE.Mesh(geometry, fillMaterial);
 
-        const cube = new THREE.Mesh(geometry, material);
+        const lineMaterial = new THREE.LineBasicMaterial({ color: 0xffff00});
+        const line = new THREE.LineSegments(
+            new THREE.WireframeGeometry(geometry), lineMaterial);
 
-        this._scene.add(cube);
-        this._cube = cube;
+        const group = new THREE.Group()
+        group.add(cube);
+        group.add(line);
+
+        this._scene.add(group);
+        this._cube=group;
     }
 
     // resize
@@ -82,8 +93,8 @@ class App {
     // render(time) -> update(time)
     update(time) {
         time *= 0.001; //second unit
-        this._cube.rotation.x = time;
-        this._cube.rotation.y = time;
+        // this._cube.rotation.x = time;
+        // this._cube.rotation.y = time;
     }
 }
 
